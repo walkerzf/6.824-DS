@@ -120,7 +120,7 @@ Example: word count
    each Reduce fetches its intermediate output from (all) Map workers
    each Reduce task writes a separate output file on GFS
 
-![image-20201223001156163](C:\Users\15524\AppData\Roaming\Typora\typora-user-images\image-20201223001156163.png)
+![image1](https://github.com/walkerzf/6.824-DS/blob/master/pictures/ExecutionOverview.png)
 
 What will likely limit the performance? => network  capacity
 
