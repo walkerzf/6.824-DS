@@ -52,7 +52,7 @@ Big idea: replicated servers.   （not use the non-volilate disk!）
 
 Purpose : multi-hour computations on multi-terabyte data-sets ,eg. build index or sort or analyze of the web
 
-overall goal: easy for non-specialist programmers ,because programmer just defines Map and Reduce function s , which are  often fairly simple sequential code
+Overall goal: easy for non-specialist programmers ,because programmer just defines Map and Reduce function s , which are  often fairly simple sequential code
   	MR takes care of, and hides, all aspects of distribution!
 
 * Scales well.
@@ -149,6 +149,7 @@ Correctness requires re-execution to yield exactly the same output. So Map and R
     master knows which Map tasks it ran on that worker.
 
     * Those tasks' intermediate output is now lost, must be re-created ,master tells other workers to run those tasks
+    * the workers that are executing reduce tasks must be re-executed
     * can omit re-running if Reduces already fetched the intermediate data
   * Reduce worker crashes.
     finished tasks are OK -- stored in GFS, with replicas.
